@@ -10,17 +10,42 @@
         }
     };
 
-    console.log(getComputerChoice());
-
     function getHumanChoice() {
         let choice = prompt("Please write your choice between Rock, Paper or Scissors.");
         return choice;
     };
 
-    // console.log(getHumanChoice());
-
     let humanScore = 0;
     let computerScore = 0;
 
-    
+    function playRound(humanChoice, computerChoice) {
+        const human = humanChoice.toLowerCase();
+        const computer = computerChoice.toLowerCase();
+        
+        if (human === computer) {
+            console.log("That's a draw, try again");
+            return;
+        } else if (human === 'rock' & computer === 'scissors') {
+            humanScore =+ 1;
+            console.log('You win! Rock beats Scissors');
+            return;
+        } else if (human === 'paper' & computer === 'rock'){
+            humanScore =+ 1;
+            console.log('You win! Paper beats Rock');
+            return;
+        } else if (human === 'scissors' & computer === 'paper'){
+            humanScore =+ 1;
+            console.log('You win! Scissors beats Paper');
+            return;
+        } else {
+            computerScore =+1;
+            console.log(`You lost! ${computer} beats ${human}`);
+            return
+        }
+    };
+
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
 </script>

@@ -36,23 +36,26 @@ function playGame() {
 
     const result = document.getElementById("result");
 
+    const score = document.querySelector("#score");
+
     function playRound(human, computer) {
         if (human === computer) {
             result.textContent = `${human} vs ${computer}. That's a draw.`;
-            return;
         } else if (human === 'Rock' & computer === 'Scissors') {
             result.textContent = 'Rock beats Scissors, You win!';
-            return humanScore ++;
+            humanScore ++;
         } else if (human === 'Paper' & computer === 'Rock'){
             result.textContent = 'Paper beats Rock, You win!';
-            return humanScore ++;
+            humanScore ++;
         } else if (human === 'Scissors' & computer === 'Paper'){
             result.textContent = 'Scissors beats Paper. You win!';
-            return humanScore ++;
+            humanScore ++;
         } else {
             result.textContent = `You lost! ${computer} beats ${human}.`;
-            return computerScore ++;
-        }
+            computerScore ++;
+        };
+        score.textContent = `Score = You: ${humanScore} - Computer: ${computerScore}`;
+
     };
 
     // for (let round = 1; round < 6; round++) {

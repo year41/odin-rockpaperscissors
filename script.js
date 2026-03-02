@@ -38,6 +38,15 @@ function playGame() {
 
     const score = document.querySelector("#score");
 
+    const resetbtn = document.createElement ("button");
+    resetbtn.textContent = "Reset";
+    resetbtn.addEventListener( "click", (event) => {
+        score.textContent = "";
+        result.textContent = "";
+        humanScore = 0;
+        computerScore = 0;
+    });
+
     function playRound(human, computer) {
         if (human === computer) {
             result.textContent = `${human} vs ${computer}. That's a draw.`;
@@ -57,13 +66,13 @@ function playGame() {
         score.textContent = `Score = You: ${humanScore} - Computer: ${computerScore}`;
 
         if (humanScore === 5) {
-            return score.textContent = "You win!!! Go and celebrate, get drunk!";
+            score.textContent = "You win!!! Go and celebrate, get drunk!";
+            score.appendChild(resetbtn);
         } else if (computerScore === 5){
-            return score.textContent = "You lose!!! Better luck next time";
+            score.textContent = "You lose!!! We're gonna cut your hands! (｀∀´)Ψ";
+            score.appendChild(resetbtn);
         };
-
     };
-    
 };
 
 playGame();

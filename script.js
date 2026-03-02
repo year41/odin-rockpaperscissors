@@ -38,13 +38,10 @@ function playGame() {
 
     const score = document.querySelector("#score");
 
-    const resetbtn = document.createElement ("button");
-    resetbtn.textContent = "Reset";
-    resetbtn.addEventListener( "click", (event) => {
-        score.textContent = "";
-        result.textContent = "";
-        humanScore = 0;
-        computerScore = 0;
+    const reset = document.createElement ("button");
+    reset.textContent = "Reset";
+    reset.addEventListener( "click", () => {
+        window.location.reload();
     });
 
     function playRound(human, computer) {
@@ -67,10 +64,16 @@ function playGame() {
 
         if (humanScore === 5) {
             score.textContent = "You win!!! Go and celebrate, get drunk!";
-            score.appendChild(resetbtn);
+            rock.disabled = true;
+            paper.disabled = true;
+            scissors.disabled = true;
+            score.appendChild(reset);
         } else if (computerScore === 5){
             score.textContent = "You lose!!! We're gonna cut your hands! (｀∀´)Ψ";
-            score.appendChild(resetbtn);
+            rock.disabled = true;
+            paper.disabled = true;
+            scissors.disabled = true;
+            score.appendChild(reset);
         };
     };
 };

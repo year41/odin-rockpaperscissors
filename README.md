@@ -13,3 +13,5 @@ the functions and how to use what to use. but it's a nice recap, it was shorter 
 ready to continue with the learning.
 
 Start implementing UI features, 2-Mar.
+Finished after about two hours, it ws fun to play with the UI of the game, this is till very 
+basic but it's nice how the functionality changes and visually nicer.

@@ -56,24 +56,14 @@ function playGame() {
         };
         score.textContent = `Score = You: ${humanScore} - Computer: ${computerScore}`;
 
+        if (humanScore === 5) {
+            return score.textContent = "You win!!! Go and celebrate, get drunk!";
+        } else if (computerScore === 5){
+            return score.textContent = "You lose!!! Better luck next time";
+        };
+
     };
-
-    // for (let round = 1; round < 6; round++) {
-    //     console.log('Round: ', round);
-    //     // playRound('paper', 'rock');
-    //     playRound(getHumanChoice(), getComputerChoice());
-    // };
-
-    console.log('Your score = ', humanScore);
-    console.log('Computer score = ', computerScore);
-
-    if (humanScore > computerScore) {
-        console.log("You won. Let's party!!!");
-    } else if (computerScore > humanScore) {
-        console.log("You lose, buuu!!!");
-    } else {
-        console.log("It's a draw. Try again, better luck next time!");
-    }
+    
 };
 
 playGame();

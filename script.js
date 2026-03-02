@@ -22,6 +22,18 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
+    rock.addEventListener("click", (event) => {
+        playRound("Rock", getComputerChoice())
+    });
+
+    paper.addEventListener("click", () => {
+        playRound("Paper", getComputerChoice())
+    });
+
+    scissors.addEventListener("click", () => {
+        playRound("Scissors", getComputerChoice())
+    });
+
     function playRound(humanChoice, computerChoice) {
         const human = humanChoice.toLowerCase();
         const computer = computerChoice.toLowerCase();

@@ -34,24 +34,23 @@ function playGame() {
         playRound("Scissors", getComputerChoice())
     });
 
-    function playRound(humanChoice, computerChoice) {
-        const human = humanChoice.toLowerCase();
-        const computer = computerChoice.toLowerCase();
-    
+    const result = document.getElementById("result");
+
+    function playRound(human, computer) {
         if (human === computer) {
-            console.log("That's a draw.");
+            result.textContent = `${human} vs ${computer}. That's a draw.`;
             return;
-        } else if (human === 'rock' & computer === 'scissors') {
-            console.log('You win! Rock beats Scissors');
+        } else if (human === 'Rock' & computer === 'Scissors') {
+            result.textContent = 'Rock beats Scissors, You win!';
             return humanScore ++;
-        } else if (human === 'paper' & computer === 'rock'){
-            console.log('You win! Paper beats Rock');
+        } else if (human === 'Paper' & computer === 'Rock'){
+            result.textContent = 'Paper beats Rock, You win!';
             return humanScore ++;
-        } else if (human === 'scissors' & computer === 'paper'){
-            console.log('You win! Scissors beats Paper');
+        } else if (human === 'Scissors' & computer === 'Paper'){
+            result.textContent = 'Scissors beats Paper. You win!';
             return humanScore ++;
         } else {
-            console.log(`You lost! ${computer} beats ${human}`);
+            result.textContent = `You lost! ${computer} beats ${human}.`;
             return computerScore ++;
         }
     };
